@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Jakaś strona</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+<script type="text/javascript">
+function odliczanie()
+{
+    var dzisiaj = new Date();
+    var godzina = dzisiaj.getHours();
+    if(godzina<10)
+        {
+            godzina = "0"+godzina;
+        }
+    var minuta = dzisiaj.getMinutes();
+        if(minuta<10)
+        {
+            minuta = "0"+minuta;
+        }
+    var sekunda = dzisiaj.getSeconds();
+        if(sekunda<10)
+        {
+            sekunda = "0"+sekunda;
+        }
+    document.getElementById("zegar").innerHTML = godzina+":"+minuta+":"+sekunda;
+    setTimeout("odliczanie()",1000);
+}
+    </script>
+</head>
+<body onload="odliczanie();">
+    <div id="main">
+        <header>
+        <img src="zegar.jpeg"/>
+        </header>
+        <h3>
+        Aktualna godzina:
+        </h3>
+        <div id="zegar"></div>
+    </div>    
+</body>
